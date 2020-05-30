@@ -7,15 +7,30 @@
 //
 
 import Foundation
+import UIKit
 
 /// ViewModel que representa un topic en la lista
-class TopicCellViewModel {
+class TopicCellViewModel: TopicCellViewModelBase {
     let topic: Topic
     var textLabelText: String?
+    var postsCount: String?
+    var replyCount: String?
+    var createdAt: String?
+    var imageUrl: UIImage?
     
-    init(topic: Topic) {
+    init(topic: Topic, imagen: Data?) {
         self.topic = topic
         // TODO: Asignar textLabelText, el título del topic
         self.textLabelText = topic.title
+        //self.imageUrl = topic.imageUrl
+        self.postsCount = "\(topic.postsCount)"
+        self.replyCount = "\(topic.replyCount)"
+        self.createdAt = topic.createdAt
+        if let imagen = imagen {
+            self.imageUrl = UIImage(data: imagen)
+        }
+        
+        
+        
     }
 }

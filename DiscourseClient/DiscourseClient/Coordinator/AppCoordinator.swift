@@ -54,13 +54,26 @@ class AppCoordinator: Coordinator {
         addChildCoordinator(usersCoordinator)
         usersCoordinator.start()
 
-        tabBarController.tabBar.tintColor = .black
-
-        tabBarController.viewControllers = [topicsNavigationController, categoriesNavigationController, usersNavigationController]
-        tabBarController.tabBar.items?.first?.image = UIImage(systemName: "list.dash")
-        tabBarController.tabBar.items?[1].image = UIImage(systemName: "tag")
-        tabBarController.tabBar.items?[2].image = UIImage(systemName: "person")
-
+        tabBarController.tabBar.backgroundColor = .brownGrey
+        //tabBarController.viewControllers = [topicsNavigationController, categoriesNavigationController, usersNavigationController]
+        tabBarController.viewControllers = [topicsNavigationController, usersNavigationController]
+        
+        
+        let fontAttributes = [NSAttributedString.Key.font : UIFont.menu, NSAttributedString.Key.foregroundColor : UIColor.brownGrey]
+        
+        let fontAttributesSelected = [NSAttributedString.Key.foregroundColor : UIColor.tangerine]
+        
+        UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes(fontAttributesSelected, for: .selected)
+        
+        tabBarController.tabBar.items?.first?.image = UIImage(named: "inicioUnselected")
+        tabBarController.tabBar.items?.first?.selectedImage = UIImage(named: "inicio")
+        
+        
+        
+        tabBarController.tabBar.items?[1].image = UIImage(named: "usuariosUnselected")
+        tabBarController.tabBar.items?[1].selectedImage = UIImage(named: "usuarios")
+        
         window.rootViewController = tabBarController
         window.makeKeyAndVisible()
     }

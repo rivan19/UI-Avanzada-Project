@@ -4,10 +4,26 @@ import Foundation
 // Puedes echar un vistazo en https://docs.discourse.org
 
 struct LatestTopicsResponse: Codable {
+    let users: [UserTopic]
     let topicList: TopicList
     
     enum CodingKeys: String, CodingKey{
+        case users
         case topicList = "topic_list"
+    }
+}
+
+struct UserTopic: Codable {
+    let id: Int
+    let username: String
+    let name: String
+    let avatarTemplate: String
+    
+    enum CodingKeys: String, CodingKey{
+        case id = "id"
+        case username = "username"
+        case name = "name"
+        case avatarTemplate = "avatar_template"
     }
 }
 
