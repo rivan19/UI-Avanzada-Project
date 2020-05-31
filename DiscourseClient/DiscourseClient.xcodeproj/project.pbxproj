@@ -64,6 +64,8 @@
 		D52FDED12482BF6D001AEB9D /* TopicCellViewModelBienvenida.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52FDED02482BF6D001AEB9D /* TopicCellViewModelBienvenida.swift */; };
 		D52FDED624831BCC001AEB9D /* AddButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D52FDED524831BCC001AEB9D /* AddButtonView.xib */; };
 		D52FDED824832225001AEB9D /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52FDED724832225001AEB9D /* AddButtonView.swift */; };
+		D52FDEDB2483BE4E001AEB9D /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52FDED92483BE4E001AEB9D /* UserCell.swift */; };
+		D52FDEDC2483BE4E001AEB9D /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D52FDEDA2483BE4E001AEB9D /* UserCell.xib */; };
 		D53C897A24426025000A31AD /* CategoriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53C897924426025000A31AD /* CategoriesRequest.swift */; };
 		D53C897C24426065000A31AD /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53C897B24426065000A31AD /* CategoriesResponse.swift */; };
 		D53C897F244263B3000A31AD /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53C897D244263B3000A31AD /* CategoryCell.swift */; };
@@ -76,8 +78,6 @@
 		D53C898D24427B6B000A31AD /* UsersDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53C898C24427B6B000A31AD /* UsersDataManager.swift */; };
 		D53C898F24427D19000A31AD /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53C898E24427D19000A31AD /* UsersViewModel.swift */; };
 		D53C899124427E30000A31AD /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53C899024427E30000A31AD /* UserCellViewModel.swift */; };
-		D53C899424427E4D000A31AD /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53C899224427E4D000A31AD /* UserCell.swift */; };
-		D53C899524427E4D000A31AD /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53C899324427E4D000A31AD /* UserCell.xib */; };
 		D53C899724429F73000A31AD /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53C899624429F73000A31AD /* UsersViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +143,8 @@
 		D52FDED02482BF6D001AEB9D /* TopicCellViewModelBienvenida.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCellViewModelBienvenida.swift; sourceTree = "<group>"; };
 		D52FDED524831BCC001AEB9D /* AddButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddButtonView.xib; sourceTree = "<group>"; };
 		D52FDED724832225001AEB9D /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
+		D52FDED92483BE4E001AEB9D /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		D52FDEDA2483BE4E001AEB9D /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		D53C897924426025000A31AD /* CategoriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRequest.swift; sourceTree = "<group>"; };
 		D53C897B24426065000A31AD /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
 		D53C897D244263B3000A31AD /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -155,8 +157,6 @@
 		D53C898C24427B6B000A31AD /* UsersDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersDataManager.swift; sourceTree = "<group>"; };
 		D53C898E24427D19000A31AD /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		D53C899024427E30000A31AD /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
-		D53C899224427E4D000A31AD /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
-		D53C899324427E4D000A31AD /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		D53C899624429F73000A31AD /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -399,9 +399,9 @@
 				D53C898C24427B6B000A31AD /* UsersDataManager.swift */,
 				D53C898E24427D19000A31AD /* UsersViewModel.swift */,
 				D53C899024427E30000A31AD /* UserCellViewModel.swift */,
-				D53C899224427E4D000A31AD /* UserCell.swift */,
-				D53C899324427E4D000A31AD /* UserCell.xib */,
 				D53C899624429F73000A31AD /* UsersViewController.swift */,
+				D52FDED92483BE4E001AEB9D /* UserCell.swift */,
+				D52FDEDA2483BE4E001AEB9D /* UserCell.xib */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -470,10 +470,10 @@
 				627DC5B223E5F581006D8615 /* Assets.xcassets in Resources */,
 				62015CBB23EF084C00673EBB /* TopicCell.xib in Resources */,
 				D52FDEC224826F3F001AEB9D /* lf30_editor_NxT7IZ.json in Resources */,
+				D52FDEDC2483BE4E001AEB9D /* UserCell.xib in Resources */,
 				D52FDED624831BCC001AEB9D /* AddButtonView.xib in Resources */,
 				D52FDEC62482762E001AEB9D /* 22921-happy-girlpeaceful.json in Resources */,
 				D53C8980244263B4000A31AD /* CategoryCell.xib in Resources */,
-				D53C899524427E4D000A31AD /* UserCell.xib in Resources */,
 				D52FDECF2482BEAC001AEB9D /* TopicCellBienvenida.xib in Resources */,
 				D52FDEC42482754C001AEB9D /* 18378-retro-game-loading-animation.json in Resources */,
 			);
@@ -537,7 +537,6 @@
 				D53C898624427687000A31AD /* UsersResponse.swift in Sources */,
 				4AC7A5842441EB8100A59F30 /* RemoveTopicResponse.swift in Sources */,
 				4AC7A5862441EBB200A59F30 /* RemoveTopicRequest.swift in Sources */,
-				D53C899424427E4D000A31AD /* UserCell.swift in Sources */,
 				4AC7A58D24431D9900A59F30 /* UserDetailDataManager.swift in Sources */,
 				62015CC823EF162D00673EBB /* SingleTopicResponse.swift in Sources */,
 				D53C898D24427B6B000A31AD /* UsersDataManager.swift in Sources */,
@@ -586,6 +585,7 @@
 				62015CB723EF04C200673EBB /* TopicCellViewModel.swift in Sources */,
 				627DC5D823E60727006D8615 /* SessionAPI.swift in Sources */,
 				627DC5D123E604E7006D8615 /* DiscourseClientLocalDataManager.swift in Sources */,
+				D52FDEDB2483BE4E001AEB9D /* UserCell.swift in Sources */,
 				4AC7A5952443243400A59F30 /* EditSingleUserResponse.swift in Sources */,
 				627DC5AB23E5F580006D8615 /* SceneDelegate.swift in Sources */,
 				627DC5CD23E6048A006D8615 /* DiscourseClientDataManager.swift in Sources */,

@@ -57,25 +57,21 @@ class TopicsViewModel {
             let topicCellViewModelBienvenida = TopicCellViewModelBienvenida()
             self.topicViewModels.append(topicCellViewModelBienvenida)
             
-            DispatchQueue.global(qos: .userInteractive).async{ [weak self] in
                 
-                guard let self = self else{
-                    return
-                }
-                
-                switch result {
+            switch result {
                 case .success(let topics):
+                    DispatchQueue.global(qos: .userInitiated).async { [weak self] in
                     if let topics = topics {
                         
-                        //let test = topics.users.
-                        
-                        for user in topics.users {
-                            self.userTopicList.append(userTopic(userId: user.id, avatar: user.avatarTemplate))
-                        }
-                        
-                        for topic in topics.topicList.topics {
+                            guard let self = self else {return}
+                            
+                            for user in topics.users {
+                                self.userTopicList.append(userTopic(userId: user.id, avatar: user.avatarTemplate))
+                            }
+                            
+                            for topic in topics.topicList.topics {
                             let userIndex = self.userTopicList.firstIndex { (user) -> Bool in
-                                user.userId == topic.posters.first?.userId
+                                user.userId == topic.posters.last?.userId
                             }
                             
                             var dataSelected: Data? = nil
@@ -93,8 +89,9 @@ class TopicsViewModel {
                             
                             let topicViewModelAux = TopicCellViewModel(topic: topic, imagen: dataSelected)
                             self.topicViewModels.append(topicViewModelAux)
-                            
                         }
+                        
+                            
                     }
                     DispatchQueue.main.async { [weak self] in
                         guard let self = self else {
@@ -102,12 +99,14 @@ class TopicsViewModel {
                         }
                         self.viewDelegate?.topicsFetched()
                     }
+                }
+                
                     
                 case .failure(_):
                     self.viewDelegate?.errorFetchingTopics()
                 }
-            }
         }
+        
     }
 
     func numberOfSections() -> Int {

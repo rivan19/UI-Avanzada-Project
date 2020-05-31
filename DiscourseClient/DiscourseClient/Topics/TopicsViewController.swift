@@ -101,8 +101,11 @@ class TopicsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //animatedView?.isHidden = false
-        //animatedView?.play()
+        if (tableView.isHidden){
+            animatedView?.isHidden = false
+            animatedView?.play()
+        }
+        
         
     }
     
@@ -127,7 +130,6 @@ class TopicsViewController: UIViewController {
         buttonView.addTopicBlock = {
             self.viewModel.plusButtonTapped()
         }
-        
         
         viewModel.viewWasLoaded()
         
@@ -163,9 +165,11 @@ extension TopicsViewController: UITableViewDataSource {
             
             //cell.heightAnchor.constraint(equalToConstant: 103.0)
             return cell
+        } else {
+            return UITableViewCell()
         }
 
-        fatalError()
+        //fatalError()
     }
 }
 

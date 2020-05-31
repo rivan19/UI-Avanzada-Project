@@ -26,9 +26,16 @@ class TopicCellViewModel: TopicCellViewModelBase {
         self.postsCount = "\(topic.postsCount)"
         self.replyCount = "\(topic.replyCount)"
         self.createdAt = topic.createdAt
-        if let imagen = imagen {
-            self.imageUrl = UIImage(data: imagen)
+        super.init()
+        DispatchQueue.global(qos: .userInitiated).async{ [weak self] in
+            guard let self = self else {
+                return
+            }
+            if let imagen = imagen {
+                self.imageUrl = UIImage(data: imagen)
+            }
         }
+        
         
         
         

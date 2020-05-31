@@ -2,44 +2,31 @@
 //  UserCell.swift
 //  DiscourseClient
 //
-//  Created by Ivan Llopis Guardado on 12/04/2020.
+//  Created by Ivan Llopis Guardado on 31/05/2020.
 //  Copyright © 2020 Roberto Garrido. All rights reserved.
 //
 
 import UIKit
 
-class UserCell: UITableViewCell {
+class UserCell: UICollectionViewCell {
 
+    @IBOutlet weak var imagen: UIImageView!
+    @IBOutlet weak var labelUser: UILabel!
+    
+    
+    static let cellIdentifier : String = String(describing: UserCell.self)
     var viewModel: UserCellViewModel? {
         didSet {
-            guard let viewModel = viewModel else { return }
-            textLabel?.text = viewModel.textLabelText
+            guard let viewModel = viewModel else {return}
+            self.imagen.layer.cornerRadius = imagen.frame.height/2
+            labelUser.font = .textStyle
+            labelUser.tintColor = .black
             
-            DispatchQueue.global(qos: .userInitiated).async {
-                if let photo = viewModel.imageString {
-                    let formatURL = photo.replacingOccurrences(of: "{size}", with: "100")
-                    
-                    let url = URL(string: apiURL + formatURL)
-                    if let urlFormated = url {
-                        if let data = try? Data(contentsOf: urlFormated) {
-                            let image = UIImage(data: data)
-                            
-                            DispatchQueue.main.async { [weak self] in
-                                guard let self = self else {
-                                    return
-                                }
-                                
-                                self.imageView?.image = image
-                                self.setNeedsLayout()
-                            }
-                        }
-                        
-                    }
-
-                }
-                
-            }
+            labelUser.text = viewModel.textLabelText
+            self.imagen.image = viewModel.imageString
         }
     }
     
+    
+
 }
