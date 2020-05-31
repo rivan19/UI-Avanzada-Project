@@ -24,7 +24,7 @@ class UsersCoordinator: Coordinator {
     override func start() {
         let usersViewModel = UsersViewModel(usersDataManager: usersDataManager)
         let usersViewController = UsersViewController(viewModel: usersViewModel)
-        usersViewController.title = NSLocalizedString("Users", comment: "")
+        usersViewController.title = NSLocalizedString("Usuarios", comment: "")
         usersViewModel.viewDelegate = usersViewController
         usersViewModel.coordinatorDelegate = self
         self.usersViewModel = usersViewModel

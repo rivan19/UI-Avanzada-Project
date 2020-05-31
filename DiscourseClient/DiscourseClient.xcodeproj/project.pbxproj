@@ -62,6 +62,8 @@
 		D52FDECE2482BEAC001AEB9D /* TopicCellBienvenida.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52FDECC2482BEAC001AEB9D /* TopicCellBienvenida.swift */; };
 		D52FDECF2482BEAC001AEB9D /* TopicCellBienvenida.xib in Resources */ = {isa = PBXBuildFile; fileRef = D52FDECD2482BEAC001AEB9D /* TopicCellBienvenida.xib */; };
 		D52FDED12482BF6D001AEB9D /* TopicCellViewModelBienvenida.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52FDED02482BF6D001AEB9D /* TopicCellViewModelBienvenida.swift */; };
+		D52FDED624831BCC001AEB9D /* AddButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D52FDED524831BCC001AEB9D /* AddButtonView.xib */; };
+		D52FDED824832225001AEB9D /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52FDED724832225001AEB9D /* AddButtonView.swift */; };
 		D53C897A24426025000A31AD /* CategoriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53C897924426025000A31AD /* CategoriesRequest.swift */; };
 		D53C897C24426065000A31AD /* CategoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53C897B24426065000A31AD /* CategoriesResponse.swift */; };
 		D53C897F244263B3000A31AD /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53C897D244263B3000A31AD /* CategoryCell.swift */; };
@@ -139,6 +141,8 @@
 		D52FDECC2482BEAC001AEB9D /* TopicCellBienvenida.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCellBienvenida.swift; sourceTree = "<group>"; };
 		D52FDECD2482BEAC001AEB9D /* TopicCellBienvenida.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCellBienvenida.xib; sourceTree = "<group>"; };
 		D52FDED02482BF6D001AEB9D /* TopicCellViewModelBienvenida.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCellViewModelBienvenida.swift; sourceTree = "<group>"; };
+		D52FDED524831BCC001AEB9D /* AddButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddButtonView.xib; sourceTree = "<group>"; };
+		D52FDED724832225001AEB9D /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
 		D53C897924426025000A31AD /* CategoriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRequest.swift; sourceTree = "<group>"; };
 		D53C897B24426065000A31AD /* CategoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesResponse.swift; sourceTree = "<group>"; };
 		D53C897D244263B3000A31AD /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -281,12 +285,14 @@
 				627DC5C423E5FEFD006D8615 /* TopicsViewController.swift */,
 				627DC5C723E60384006D8615 /* TopicsDataManager.swift */,
 				62015CB623EF04C200673EBB /* TopicCellViewModel.swift */,
-				62015CB823EF084C00673EBB /* TopicCell.swift */,
 				62015CB923EF084C00673EBB /* TopicCell.xib */,
+				62015CB823EF084C00673EBB /* TopicCell.swift */,
 				D52FDECA2482B44A001AEB9D /* TopicCellViewModelBase.swift */,
 				D52FDECC2482BEAC001AEB9D /* TopicCellBienvenida.swift */,
 				D52FDECD2482BEAC001AEB9D /* TopicCellBienvenida.xib */,
 				D52FDED02482BF6D001AEB9D /* TopicCellViewModelBienvenida.swift */,
+				D52FDED524831BCC001AEB9D /* AddButtonView.xib */,
+				D52FDED724832225001AEB9D /* AddButtonView.swift */,
 			);
 			path = Topics;
 			sourceTree = "<group>";
@@ -464,6 +470,7 @@
 				627DC5B223E5F581006D8615 /* Assets.xcassets in Resources */,
 				62015CBB23EF084C00673EBB /* TopicCell.xib in Resources */,
 				D52FDEC224826F3F001AEB9D /* lf30_editor_NxT7IZ.json in Resources */,
+				D52FDED624831BCC001AEB9D /* AddButtonView.xib in Resources */,
 				D52FDEC62482762E001AEB9D /* 22921-happy-girlpeaceful.json in Resources */,
 				D53C8980244263B4000A31AD /* CategoryCell.xib in Resources */,
 				D53C899524427E4D000A31AD /* UserCell.xib in Resources */,
@@ -564,6 +571,7 @@
 				62015CD223EF205100673EBB /* CreateTopicRequest.swift in Sources */,
 				62015CC223EF0FA000673EBB /* TopicDetailViewController.swift in Sources */,
 				D52FDECE2482BEAC001AEB9D /* TopicCellBienvenida.swift in Sources */,
+				D52FDED824832225001AEB9D /* AddButtonView.swift in Sources */,
 				62015CDD23EF302900673EBB /* CategoriesViewController.swift in Sources */,
 				D53C897F244263B3000A31AD /* CategoryCell.swift in Sources */,
 				627DC5C823E60384006D8615 /* TopicsDataManager.swift in Sources */,

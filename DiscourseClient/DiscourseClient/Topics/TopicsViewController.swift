@@ -12,6 +12,8 @@ import Lottie
 /// ViewController que representa un listado de topics
 class TopicsViewController: UIViewController {
     
+    //@IBOutlet weak var viewButton: AddButtonView!
+    
     private var animatedView: AnimationView?
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
@@ -22,15 +24,13 @@ class TopicsViewController: UIViewController {
         table.register(UINib(nibName: TopicCellBienvenida.cellIdentifier, bundle: nil), forCellReuseIdentifier: TopicCellBienvenida.cellIdentifier)
         table.estimatedRowHeight = 100
         table.rowHeight = UITableView.automaticDimension
+        table.backgroundColor = .white
+        
         return table
     }()
     
-    lazy var buttonAddTopic: UIButton = {
-        let button = UIButton(frame: .zero)
-        let imagenAddTopic = UIImage(named: "icoNew")
-        
-        button.setImage(imagenAddTopic, for: .normal)
-        return button
+    lazy var buttonView: AddButtonView = {
+       return AddButtonView()
     }()
     
     //let imageAddTopicView: UIImageView
@@ -51,22 +51,10 @@ class TopicsViewController: UIViewController {
         view = UIView()
         view.backgroundColor = .white
         
-        /*let viewTest = UIView(frame: .zero)
-        //viewTest.bounds = view.bounds
         
-        viewTest.backgroundColor = .tangerine
-        view.addSubview(viewTest)
-        viewTest.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            viewTest.topAnchor.constraint(equalTo: view.topAnchor),
-            viewTest.leftAnchor.constraint(equalTo: view.leftAnchor),
-            viewTest.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
-            viewTest.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
-        ])*/
         
         animatedView = AnimationView(name: "18378-retro-game-loading-animation")
         if let animatedView = animatedView {
-            //animatedView.translatesAutoresizingMaskIntoConstraints = false
             
             animatedView.frame = .zero
             
@@ -81,19 +69,9 @@ class TopicsViewController: UIViewController {
             
             animatedView.loopMode = .loop
             
-            animatedView.play()
+            
         }
         
-        /*buttonAddTopic.adjustsImageSizeForAccessibilityContentSizeCategory = false
-        view.addSubview(buttonAddTopic)
-        
-        NSLayoutConstraint.activate([
-            buttonAddTopic.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 15.0),
-            buttonAddTopic.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 12.0),
-            buttonAddTopic.widthAnchor.constraint(equalToConstant: 64.0),
-            buttonAddTopic.heightAnchor.constraint(equalToConstant: 64.0)
-        ])
-         */
         tableView.isHidden = true
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -103,18 +81,8 @@ class TopicsViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
-        buttonAddTopic.adjustsImageSizeForAccessibilityContentSizeCategory = false
-        view.addSubview(buttonAddTopic)
         
-        NSLayoutConstraint.activate([
-            buttonAddTopic.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 15.0),
-            buttonAddTopic.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 12.0),
-            buttonAddTopic.widthAnchor.constraint(equalToConstant: 64.0),
-            buttonAddTopic.heightAnchor.constraint(equalToConstant: 64.0)
-        ])
         view.sendSubviewToBack(tableView)
-        
-        //view.sendSubviewToBack(tableView)
 
         let rightBarButtonItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "icoSearch"), style: .plain, target: self, action: nil)
         //rightBarButtonItem.tintColor = .black
@@ -125,18 +93,44 @@ class TopicsViewController: UIViewController {
         navigationItem.leftBarButtonItem = leftBarButtonItem
     }
     
-    /*override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        viewModel.viewWasLoaded()
-    }*/
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        animatedView?.isHidden = true
+        animatedView?.stop()
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //animatedView?.isHidden = false
+        //animatedView?.play()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        animatedView?.play()
         
+        buttonView.isHidden = true
+        buttonView.backgroundColor = .clear
+        
+        buttonView.isOpaque = false
+        
+        view.addSubview(buttonView)
+        buttonView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            buttonView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -10),
+            buttonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
+            buttonView.widthAnchor.constraint(equalToConstant: 64.0),
+            buttonView.heightAnchor.constraint(equalToConstant: 64.0)
+        ])
+        
+        buttonView.addTopicBlock = {
+            self.viewModel.plusButtonTapped()
+        }
         
         
         viewModel.viewWasLoaded()
+        
     }
 
     @objc func plusButtonTapped() {
@@ -193,9 +187,13 @@ extension TopicsViewController: TopicsViewDelegate {
             animatedView.isHidden = true
         }
         
+        buttonView.isHidden = false
+        
     }
 
     func errorFetchingTopics() {
         showErrorFetchingTopicsAlert()
+        animatedView?.stop()
+        animatedView?.isHidden = true
     }
 }

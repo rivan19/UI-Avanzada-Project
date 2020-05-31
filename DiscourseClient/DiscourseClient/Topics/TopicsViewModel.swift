@@ -15,6 +15,10 @@ protocol TopicsCoordinatorDelegate: class {
     func topicsPlusButtonTapped()
 }
 
+protocol AddButtonTopicView {
+    func addTopicsButtonTapped()
+}
+
 /// Delegate a través del cual vamos a comunicar a la vista eventos que requiran pintar el UI, pasándole aquellos datos que necesita
 protocol TopicsViewDelegate: class {
     func topicsFetched()
@@ -53,7 +57,7 @@ class TopicsViewModel {
             let topicCellViewModelBienvenida = TopicCellViewModelBienvenida()
             self.topicViewModels.append(topicCellViewModelBienvenida)
             
-            DispatchQueue.global(qos: .userInitiated).async{ [weak self] in
+            DispatchQueue.global(qos: .userInteractive).async{ [weak self] in
                 
                 guard let self = self else{
                     return

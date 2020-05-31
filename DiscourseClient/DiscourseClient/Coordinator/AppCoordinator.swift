@@ -37,6 +37,13 @@ class AppCoordinator: Coordinator {
         let tabBarController = UITabBarController()
 
         let topicsNavigationController = UINavigationController()
+        let fontAttributesNavigation = [NSAttributedString.Key.font : UIFont.largeTitle2Bold1Light1LabelColor1LeftAligned, NSAttributedString.Key.foregroundColor : UIColor.black]
+        
+        //let bounds = topicsNavigationController.navigationBar.bounds
+        //topicsNavigationController.navigationBar.frame = CGRect(x: 0, y: 0, width: bounds.width, height: 140.0)
+        
+        topicsNavigationController.navigationBar.titleTextAttributes = fontAttributesNavigation
+        
         let topicsCoordinator = TopicsCoordinator(presenter: topicsNavigationController,
                                                   topicsDataManager: dataManager,
                                                   topicDetailDataManager: dataManager,
@@ -50,6 +57,7 @@ class AppCoordinator: Coordinator {
         categoriesCoordinator.start()
         
         let usersNavigationController = UINavigationController()
+        usersNavigationController.navigationBar.titleTextAttributes = fontAttributesNavigation
         let usersCoordinator = UsersCoordinator(presenter: usersNavigationController, usersDataManager: dataManager, userDetailDataManager: dataManager)
         addChildCoordinator(usersCoordinator)
         usersCoordinator.start()

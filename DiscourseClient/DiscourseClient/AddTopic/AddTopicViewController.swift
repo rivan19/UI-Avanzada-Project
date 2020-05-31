@@ -60,7 +60,7 @@ class AddTopicViewController: UIViewController {
         let submitButton = UIButton(type: .system)
         submitButton.translatesAutoresizingMaskIntoConstraints = false
         submitButton.setTitle(NSLocalizedString("Submit", comment: ""), for: .normal)
-        submitButton.backgroundColor = .cyan
+        submitButton.backgroundColor = .tangerine
         submitButton.setTitleColor(.white, for: .normal)
         submitButton.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
 

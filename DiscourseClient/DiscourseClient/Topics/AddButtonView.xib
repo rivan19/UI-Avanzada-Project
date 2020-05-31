@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddButtonView" customModule="DiscourseClient" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="Yaq-Lr-UdH" id="gyK-t6-oEA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5tL-of-XYg">
+                    <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yaq-Lr-UdH">
+                            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="icoNew"/>
+                            <connections>
+                                <action selector="addTopic:" destination="-1" eventType="touchUpInside" id="AwL-Ln-rHa"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="5tL-of-XYg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5sM-yr-T56"/>
+                <constraint firstAttribute="trailing" secondItem="5tL-of-XYg" secondAttribute="trailing" id="NG8-Pf-nUS"/>
+                <constraint firstItem="5tL-of-XYg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="twY-Kc-U3C"/>
+                <constraint firstAttribute="bottom" secondItem="5tL-of-XYg" secondAttribute="bottom" id="w3V-eD-ckm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="438.61607142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icoNew" width="64" height="64"/>
+    </resources>
+</document>
